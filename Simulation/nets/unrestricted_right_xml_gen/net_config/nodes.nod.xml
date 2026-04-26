@@ -1,0 +1,10 @@
+<nodes>
+
+    <node id = "junction" x="0.00" y="0.00" type="traffic_light_unregulated" tl="traffic_light" />
+
+    <node id = "west" x="-500.00" y="0.00" type="priority"/>
+    <node id = "east" x="500.00" y="0.00" type="priority"/>
+    <node id = "north" x="0.00" y="500.00" type="priority"/>
+    <node id = "south" x="0.00" y="-500.00" type="priority"/>
+
+</nodes>

@@ -1,0 +1,16 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+libsumo
+traci 
+sumo-rl
+gymnasium
+stable-baselines3
+sb3-contrib
+tensorboard
+pyyaml
+pgmpy
+networkx
+causal-learn

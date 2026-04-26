@@ -1,0 +1,20 @@
+<configuration>
+
+    <input>
+        <net-file value="unrestricted_right.net.xml"/>
+        <route-files value="unrestricted_right.rou.xml"/>
+    </input>
+
+    <processing>
+        <!-- How to deal with collisions: [none,warn,teleport,remove] -->
+        <collision.action value="teleport"/>
+
+        <!-- Enables collisions checks on junctions -->
+        <collision.check-junctions value="true"/>
+
+        <!-- Select default speed deviation. A negative value implies vClass specific defaults (0.1 for the default passenger class) -->
+        <default.speeddev value="0.1"/>
+
+    </processing>
+
+</configuration>

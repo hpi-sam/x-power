@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<additional>
+  <vType id="standard" maxSpeed="13.89" accel="2.6" decel="4.5" sigma="0.5" length="5.0" minGap="2.5" color="255,255,0">
+    <param key="frictionCoefficient" value="1.0" />
+    <param key="has.ssm.device" value="true" />
+    <param key="device.ssm.measures" value="TTC DRAC PET" />
+    <param key="device.ssm.thresholds" value="3.0 3.0 2.0" />
+    <param key="device.ssm.range" value="50.0" />
+  </vType>
+  <vType id="cautious" maxSpeed="8.33" accel="1.5" decel="3.0" sigma="0.1" length="5.0" minGap="2.5" color="0,0,255">
+    <param key="frictionCoefficient" value="1.0" />
+    <param key="has.ssm.device" value="true" />
+    <param key="device.ssm.measures" value="TTC DRAC PET" />
+    <param key="device.ssm.thresholds" value="3.0 3.0 2.0" />
+    <param key="device.ssm.range" value="50.0" />
+  </vType>
+</additional>

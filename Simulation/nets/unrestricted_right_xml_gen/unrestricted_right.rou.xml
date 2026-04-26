@@ -1,0 +1,14 @@
+<routes>
+    <flow id="southEast" color="red" begin="0" end="3600" period="exp(0.1)" departLane="random" departPos="base" departSpeed="last">
+        <route edges="southJunction junctionEast" />\
+    </flow>
+
+    <flow id="southNorth" color="blue" begin="0" end="3600" period="exp(0.1)" departLane="random" departPos="base" departSpeed="last">
+        <route edges="southJunction junctionNorth" />
+    </flow>
+
+    <flow id="westEast" color="green" begin="0" end="3600" period="exp(0.1)" departLane="free" departPos="base" departSpeed="last">
+        <route edges="westJunction junctionEast" />
+    </flow>
+
+</routes>

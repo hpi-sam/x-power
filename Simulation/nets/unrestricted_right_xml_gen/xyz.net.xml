@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-02-25 13:40:32 by Eclipse SUMO netconvert Version 1.24.0
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="nodes.nod.xml"/>
+        <edge-files value="edges.edg.xml"/>
+        <connection-files value="connections.con.xml"/>
+        <tllogic-files value="tllogic.tll.xml"/>
+    </input>
+
+</netconvertConfiguration>
+-->
+
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="500.00,500.00" convBoundary="0.00,0.00,1000.00,1000.00" origBoundary="-500.00,-500.00,500.00,500.00" projParameter="!"/>
+
+    <edge id=":junction_0" function="internal">
+        <lane id=":junction_0_0" index="0" speed="6.51" length="9.03" shape="501.60,492.80 501.95,495.25 503.00,497.00 504.75,498.05 507.20,498.40"/>
+    </edge>
+    <edge id=":junction_1" function="internal">
+        <lane id=":junction_1_0" index="0" speed="55.55" length="14.83" shape="498.40,492.80 498.90,497.46 500.00,500.89 501.10,503.88 501.60,507.20"/>
+    </edge>
+    <edge id=":junction_2" function="internal">
+        <lane id=":junction_2_0" index="0" speed="55.55" length="14.40" shape="492.80,498.40 507.20,498.40"/>
+        <lane id=":junction_2_1" index="1" speed="55.55" length="14.40" shape="492.80,501.60 507.20,501.60"/>
+    </edge>
+
+    <edge id="junctionEast" from="junction" to="east" priority="1" spreadType="center">
+        <lane id="junctionEast_0" index="0" speed="55.55" length="492.80" shape="507.20,498.40 1000.00,498.40">
+            <param key="frictionCoefficient" value="1.0"/>
+        </lane>
+        <lane id="junctionEast_1" index="1" speed="55.55" length="492.80" shape="507.20,501.60 1000.00,501.60" changeLeft="emergency">
+            <param key="frictionCoefficient" value="1.0"/>
+        </lane>
+    </edge>
+    <edge id="junctionNorth" from="junction" to="north" priority="1">
+        <lane id="junctionNorth_0" index="0" speed="55.55" length="492.80" shape="501.60,507.20 501.60,1000.00">
+            <param key="frictionCoefficient" value="1.0"/>
+        </lane>
+    </edge>
+    <edge id="southJunction" from="south" to="junction" priority="1" spreadType="center">
+        <lane id="southJunction_0" index="0" speed="55.55" length="492.80" shape="501.60,0.00 501.60,492.80">
+            <param key="frictionCoefficient" value="1.0"/>
+        </lane>
+        <lane id="southJunction_1" index="1" speed="55.55" length="492.80" shape="498.40,0.00 498.40,492.80">
+            <param key="frictionCoefficient" value="1.0"/>
+        </lane>
+    </edge>
+    <edge id="westJunction" from="west" to="junction" priority="1" spreadType="center">
+        <lane id="westJunction_0" index="0" speed="55.55" length="492.80" shape="0.00,498.40 492.80,498.40">
+            <param key="frictionCoefficient" value="1.0"/>
+        </lane>
+        <lane id="westJunction_1" index="1" speed="55.55" length="492.80" shape="0.00,501.60 492.80,501.60" changeRight="emergency">
+            <param key="frictionCoefficient" value="1.0"/>
+        </lane>
+    </edge>
+
+    <tlLogic id="traffic_light" type="static" programID="0" offset="0">
+        <phase duration="3"  state="gyyy"/>
+        <phase duration="27" state="grgg"/>
+        <phase duration="3"  state="gyyy"/>
+        <phase duration="27" state="ggrr"/>
+    </tlLogic>
+
+    <junction id="east" type="dead_end" x="1000.00" y="500.00" incLanes="junctionEast_0 junctionEast_1" intLanes="" shape="1000.00,496.80 1000.00,503.20"/>
+    <junction id="junction" type="traffic_light_unregulated" x="500.00" y="500.00" incLanes="southJunction_0 southJunction_1 westJunction_0 westJunction_1" intLanes=":junction_0_0 :junction_1_0 :junction_2_0 :junction_2_1" shape="500.00,507.20 503.20,507.20 503.64,504.98 504.20,504.20 504.98,503.64 505.98,503.31 507.20,503.20 507.20,496.80 504.98,496.36 504.20,495.80 503.64,495.02 503.31,494.02 503.20,492.80 496.80,492.80 496.36,495.02 495.80,495.80 495.02,496.36 494.02,496.69 492.80,496.80 492.80,503.20 495.00,503.31 496.80,503.64 498.20,504.20 499.20,504.98 499.80,505.98"/>
+    <junction id="north" type="dead_end" x="500.00" y="1000.00" incLanes="junctionNorth_0" intLanes="" shape="503.20,1000.00 500.00,1000.00"/>
+    <junction id="south" type="dead_end" x="500.00" y="0.00" incLanes="" intLanes="" shape="496.80,0.00 503.20,0.00"/>
+    <junction id="west" type="dead_end" x="0.00" y="500.00" incLanes="" intLanes="" shape="0.00,503.20 0.00,496.80"/>
+
+    <connection from="southJunction" to="junctionEast" fromLane="0" toLane="0" via=":junction_0_0" tl="traffic_light" linkIndex="0" dir="r" state="O"/>
+    <connection from="southJunction" to="junctionNorth" fromLane="1" toLane="0" via=":junction_1_0" tl="traffic_light" linkIndex="1" dir="s" state="O"/>
+    <connection from="westJunction" to="junctionEast" fromLane="0" toLane="0" via=":junction_2_0" tl="traffic_light" linkIndex="2" dir="s" state="O"/>
+    <connection from="westJunction" to="junctionEast" fromLane="1" toLane="1" via=":junction_2_1" tl="traffic_light" linkIndex="3" dir="s" state="O"/>
+
+    <connection from=":junction_0" to="junctionEast" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":junction_1" to="junctionNorth" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":junction_2" to="junctionEast" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":junction_2" to="junctionEast" fromLane="1" toLane="1" dir="s" state="M"/>
+
+</net>
